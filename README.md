@@ -5,6 +5,11 @@
 一个品牌，两个程序：**代码编辑器** + **游戏引擎**。开箱即可用中文写 C/C++、Python、Java、TypeScript，
 以及在引擎里用 GDScript 的中文标识符 / ChinesePython 写游戏逻辑。
 
+## 文档
+
+- **Wiki（推荐）**：https://github.com/YoloLogic/CDZC/wiki
+- 仓库内文档：[wiki/](wiki) · [docs/](docs)
+
 ## 下载
 
 到 [Releases](../../releases) 下载 **[`CDZC-0.1-Setup.exe`](../../releases/download/v0.1/CDZC-0.1-Setup.exe)**（373.6 MB）。
