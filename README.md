@@ -7,7 +7,7 @@
 
 ## 下载
 
-到 [Releases](../../releases) 下载 **`中文大战代码-0.1-安装程序.exe`**（约 374 MB）。
+到 [Releases](../../releases) 下载 **[`CDZC-0.1-Setup.exe`](../../releases/download/v0.1/CDZC-0.1-Setup.exe)**（373.6 MB）。
 
 - Windows 10/11 x64
 - 安装包会问：装到哪、要不要桌面快捷方式、要不要加 PATH、要不要右键菜单
