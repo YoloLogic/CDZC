@@ -1,0 +1,5 @@
+# 安装包不进仓库（373 MB，GitHub 单文件上限 100 MB）——走 Releases
+*.exe
+*.pck
+*.zip
+*.7z
