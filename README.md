@@ -5,6 +5,18 @@
 一个品牌，两个程序：**代码编辑器** + **游戏引擎**。开箱即可用中文写 C/C++、Python、Java、TypeScript，
 以及在引擎里用 GDScript 的中文标识符 / ChinesePython 写游戏逻辑。
 
+## VS Code 扩展（不装我们的编辑器，也能用汉语编程）
+
+如果你已经有 VS Code，不想换编辑器，直接装扩展：
+
+| 渠道 | 地址 |
+|---|---|
+GitHub Release（可直下 .vsix） | https://github.com/YoloLogic/chinese-plus-plus-vscode/releases |
+VS Marketplace | https://marketplace.visualstudio.com/items?itemName=YoloLogic.chinese-plus-plus |
+源码 | https://github.com/YoloLogic/chinese-plus-plus-vscode |
+
+装完新建 `你好.cpp`，按 <kbd>Ctrl</kbd>+<kbd>F5</kbd> 即可 —— **编译器随扩展一起下载，不需要 Visual Studio**。
+
 ## 文档
 
 - **Wiki（推荐）**：https://github.com/YoloLogic/CDZC/wiki
@@ -68,6 +80,18 @@ examples\                   cpp / python / java / typescript 四份可直接跑�
 
 见 [docs/已知问题.md](docs/已知问题.md)。里面有按 P0/P1/P2 排的待修项、复现命令与归属，
 以及一张「**不是 bug 的有意设计边界**」清单（例如 Java 的库类型名保持英文、诊断前缀保持英文）。
+
+## VS Code 扩展（不装我们的编辑器，也能用汉语编程）
+
+如果你已经有 VS Code，不想换编辑器，直接装扩展：
+
+| 渠道 | 地址 |
+|---|---|
+GitHub Release（可直下 .vsix） | https://github.com/YoloLogic/chinese-plus-plus-vscode/releases |
+VS Marketplace | https://marketplace.visualstudio.com/items?itemName=YoloLogic.chinese-plus-plus |
+源码 | https://github.com/YoloLogic/chinese-plus-plus-vscode |
+
+装完新建 `你好.cpp`，按 <kbd>Ctrl</kbd>+<kbd>F5</kbd> 即可 —— **编译器随扩展一起下载，不需要 Visual Studio**。
 
 ## 文档
 
