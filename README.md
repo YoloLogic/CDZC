@@ -26,7 +26,7 @@ VS Marketplace | https://marketplace.visualstudio.com/items?itemName=YoloLogic.c
 
 到 [Releases](../../releases) 下载 **[`CDZC-0.1-Setup.exe`](../../releases/download/v0.1/CDZC-0.1-Setup.exe)**（373.6 MB）。
 
-**便携版（免安装，推荐）**：[`中文大战代码-0.1-win64.zip`](https://github.com/YoloLogic/CDZC/releases/download/v0.1/%E4%B8%AD%E6%96%87%E5%A4%A7%E6%88%98%E4%BB%A3%E7%A0%81-0.1-win64.zip)
+**便携版（免安装，推荐）**：[`CDZC-0.1-win64.zip`](https://github.com/YoloLogic/CDZC/releases/download/v0.1/CDZC-0.1-win64.zip)
 （620.9 MB，SHA256 `138f74c4cf48fdaf81382c2dc0eee3a53568aabe398d80194336a17e88f68bea`）
 解压 → 双击 `中文大战代码-0.1\启动.cmd` 即可，四条工具链会自动注入 PATH。
 包内 Chinese++ 为 **0.4**（LLVM/Clang 24 分支，101 个中文关键字拼写，免装 Visual Studio）。
