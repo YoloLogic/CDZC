@@ -1,6 +1,6 @@
-<p align="center">
-  <img src="banner.svg" width="100%" alt="中文大战代码 · CDZC">
-</p>
+> ### 🀄 中文大战代码 · CDZC
+>
+> 一个品牌，两个程序：代码编辑器 + 游戏引擎。
 
 | [🏠 首页](Home) | [💾 安装](安装与卸载) | [🖥️ 编辑器](代码编辑器) | [🎮 引擎](游戏引擎) | [🧰 工具链](四门工具链) | [⚠️ 已知问题](已知问题) |
 |:---:|:---:|:---:|:---:|:---:|:---:|
@@ -30,7 +30,7 @@
 
 | | |
 |:---:|:---:|
-| <a href="代码编辑器"><img src="icons/编辑器.svg" width="72"><br><b>中文大战代码 · 代码编辑器</b></a><br><sub><code>editor\中文大战代码.exe</code></sub> | <a href="游戏引擎"><img src="icons/引擎.svg" width="72"><br><b>中文大战代码 · 游戏引擎</b></a><br><sub><code>engine\中文大战代码.exe</code></sub> |
+| <a href="代码编辑器">🖥️<br><b>中文大战代码 · 代码编辑器</b></a><br><sub><code>editor\中文大战代码.exe</code></sub> | <a href="游戏引擎">🎮<br><b>中文大战代码 · 游戏引擎</b></a><br><sub><code>engine\中文大战代码.exe</code></sub> |
 | VS Code 1.142 分支，界面**源码级中文**（不是语言包） | 魔改 Godot 4.7.2（<code>custom_build</code>），界面中文，**自带 ChinesePython** |
 
 > [!TIP]
@@ -43,13 +43,13 @@
 <table>
 <tr>
 <td align="center" width="33%">
-  <a href="https://github.com/YoloLogic/CDZC/releases"><img src="icons/下载.svg" width="64"><br><b>0.1 安装包</b></a><br><sub>373.6 MB · SHA256 已公布</sub>
+  <a href="https://github.com/YoloLogic/CDZC/releases">⬇️<br><b>0.1 安装包</b></a><br><sub>373.6 MB · SHA256 已公布</sub>
 </td>
 <td align="center" width="33%">
-  <a href="游戏引擎"><img src="icons/引擎.svg" width="64"><br><b>引擎自带 ChinesePython</b></a><br><sub><code>python314.dll</code> + <code>Lib</code> 走磁盘</sub>
+  <a href="游戏引擎">🎮<br><b>引擎自带 ChinesePython</b></a><br><sub><code>python314.dll</code> + <code>Lib</code> 走磁盘</sub>
 </td>
 <td align="center" width="33%">
-  <a href="游戏引擎"><img src="icons/编辑器.svg" width="64"><br><b>引擎内置编辑器改成本产品</b></a><br><sub>改 Godot 源码，默认外部编辑器</sub>
+  <a href="游戏引擎">🖥️<br><b>引擎内置编辑器改成本产品</b></a><br><sub>改 Godot 源码，默认外部编辑器</sub>
 </td>
 </tr>
 </table>
@@ -62,13 +62,13 @@
 
 | | | | | | |
 |:---:|:---:|:---:|:---:|:---:|:---:|
-| <a href="代码编辑器"><img src="icons/编辑器.svg" width="60"><br><b>编辑器</b></a><br><sub>全中文</sub> | <a href="游戏引擎"><img src="icons/引擎.svg" width="60"><br><b>游戏引擎</b></a><br><sub>魔改 Godot</sub> | <a href="四门工具链"><img src="icons/编译.svg" width="60"><br><b>四门工具链</b></a><br><sub>C++/Py/Java/TS</sub> | <a href="安装与卸载"><img src="icons/安装.svg" width="60"><br><b>安装卸载</b></a><br><sub>一键干净</sub> | <a href="下载与校验"><img src="icons/下载.svg" width="60"><br><b>下载校验</b></a><br><sub>SHA256</sub> | <a href="已知问题"><img src="icons/报错.svg" width="60"><br><b>已知问题</b></a><br><sub>三类分开看</sub> |
+| <a href="代码编辑器">🖥️<br><b>编辑器</b></a><br><sub>全中文</sub> | <a href="游戏引擎">🎮<br><b>游戏引擎</b></a><br><sub>魔改 Godot</sub> | <a href="四门工具链">⚙️<br><b>四门工具链</b></a><br><sub>C++/Py/Java/TS</sub> | <a href="安装与卸载">💾<br><b>安装卸载</b></a><br><sub>一键干净</sub> | <a href="下载与校验">⬇️<br><b>下载校验</b></a><br><sub>SHA256</sub> | <a href="已知问题">🚨<br><b>已知问题</b></a><br><sub>三类分开看</sub> |
 
 ### 文档
 
 | | | | | | |
 |:---:|:---:|:---:|:---:|:---:|:---:|
-| <a href="https://github.com/YoloLogic/ChinesePlusPlus/wiki"><img src="icons/关键.svg" width="60"><br><b>Chinese++</b></a><br><sub>编译器文档</sub> | <a href="四门工具链"><img src="icons/标准库.svg" width="60"><br><b>示例工程</b></a><br><sub>Ctrl+Shift+B</sub> | <a href="四门工具链"><img src="icons/自检.svg" width="60"><br><b>自检</b></a><br><sub>29 项</sub> | <a href="已知问题"><img src="icons/诊断.svg" width="60"><br><b>设计边界</b></a><br><sub>不是 bug</sub> | <a href="代码编辑器"><img src="icons/仓库.svg" width="60"><br><b>内置扩展</b></a><br><sub>4 个</sub> | <a href="https://github.com/YoloLogic/CDZC"><img src="icons/边界.svg" width="60"><br><b>源码仓库</b></a><br><sub>GitHub</sub> |
+| <a href="https://github.com/YoloLogic/ChinesePlusPlus/wiki">🔤<br><b>Chinese++</b></a><br><sub>编译器文档</sub> | <a href="四门工具链">📦<br><b>示例工程</b></a><br><sub>Ctrl+Shift+B</sub> | <a href="四门工具链">✅<br><b>自检</b></a><br><sub>29 项</sub> | <a href="已知问题">🩺<br><b>设计边界</b></a><br><sub>不是 bug</sub> | <a href="代码编辑器">🏛️<br><b>内置扩展</b></a><br><sub>4 个</sub> | <a href="https://github.com/YoloLogic/CDZC">🧭<br><b>源码仓库</b></a><br><sub>GitHub</sub> |
 
 ---
 

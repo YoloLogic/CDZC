@@ -1,6 +1,6 @@
-<p align="center">
-  <img src="图标.svg" width="72" alt="中文大战代码">
-</p>
+> ### 🀄 中文大战代码 · CDZC
+>
+> 一个品牌，两个程序：代码编辑器 + 游戏引擎。
 
 <p align="center">
   <b>中文大战代码</b><br>
