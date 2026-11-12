@@ -36,11 +36,17 @@ New-Item -ItemType Directory -Force $根, $tc | Out-Null
 
 # ---------------------------------------------------------------- 1) Chinese++
 步 '1/7 Chinese++'
-$cppSrc = 'E:\Chinese++\dist\Chinese++-0.3-win64'
+$cppSrc = Get-ChildItem 'E:\Chinese++\dist' -Directory -Filter 'Chinese++-*-win64' -ErrorAction SilentlyContinue |
+    Sort-Object { [version]($_.Name -replace '^Chinese\+\+-', '' -replace '-win64$', '') } |
+    Select-Object -Last 1 | ForEach-Object { $_.FullName }
 if (Test-Path -LiteralPath $cppSrc) {
 	robocopy $cppSrc (Join-Path $tc 'cpp') /MIR /NFL /NDL /NJH /NJS /NP | Out-Null
 	# 补齐发行包缺的东西：9 个别名（ZIP 不保留硬链接）+ bin\<driver>.cfg（中文头搜索路径）
-	& pwsh -NoProfile -File (Join-Path $PSScriptRoot '生成中文头配置.ps1') -包根 (Join-Path $tc 'cpp') -模式 system | Out-Null
+	# cfg 必须由 make_zhcfg.ps1 生成（0.4 起 cfg 含 -include 兼容头与 nodefaultlib，
+	# 旧的 生成中文头配置.ps1 只有 13 行，缺这些，会编译失败）
+	$mk = Join-Path $tc 'cpp\tools\make_zhcfg.ps1'
+	if (-not (Test-Path -LiteralPath $mk)) { $mk = Join-Path $PSScriptRoot '..\..\Chinese++\tools\make_zhcfg.ps1' }
+	& pwsh -NoProfile -File $mk -Mode bundled -ZhRoot (Join-Path $tc 'cpp') -BinDir (Join-Path $tc 'cpp\bin') | Out-Null
 	Write-Host ('  ' + (大小 (Join-Path $tc 'cpp')) + ' MB')
 } else { Write-Host '  !! 缺来源：' + $cppSrc; exit 1 }
 
