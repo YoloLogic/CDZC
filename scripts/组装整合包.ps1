@@ -1,4 +1,5 @@
-# ============================================================================
+#
+ ============================================================================
 #  组装整合包.ps1 —— 从各条线的"源头产物"重新组装整合包
 #
 #  为什么要有这个脚本：
@@ -254,7 +255,7 @@ $tasks = @'
     {
       "label": "C++：编译并运行",
       "type": "shell",
-      "command": "chinese++ -std=c++20 -D_CRT_SECURE_NO_WARNINGS \"${file}\" -o \"${fileDirname}\\你好.exe\" && \"${fileDirname}\\你好.exe\"" -I\"${env:CDZC_ROOT}\\toolchains\\cpp\\zhstdlib\\别名\" -I\"${env:CDZC_ROOT}\\toolchains\\cpp\\zhstdlib\\C运行库\" -I\"${env:CDZC_ROOT}\\toolchains\\cpp\\zhstdlib\\windows系统\" \"${file}\" -o \"${fileDirname}\\你好.exe\" && \"${fileDirname}\\你好.exe\"",
+      "command": "chinese++ -std=c++20 -D_CRT_SECURE_NO_WARNINGS \"${file}\" -o \"${fileDirname}/你好.exe\" && \"${fileDirname}/你好.exe\"",
       "group": { "kind": "build", "isDefault": true },
       "problemMatcher": { "pattern": { "regexp": "^(.*?):(\\d+):(\\d+):\\s+(error|warning|note):\\s+(.*)$", "file": 1, "line": 2, "column": 3, "severity": 4, "message": 5 } }
     },
@@ -283,6 +284,8 @@ $tasks = @'
 }
 '@
 [System.IO.File]::WriteAllText((Join-Path $ex '.vscode\tasks.json'), ($tasks -replace "`r?`n", "`n"), $enc)
+# 自检：tasks.json 必须是合法 JSON（非法时 VS Code 的「运行任务」列表会是空的）
+try { $tasks | ConvertFrom-Json | Out-Null } catch { throw ('tasks.json 非法：' + $_) }
 Write-Host ('  ' + (大小 $ex) + ' MB')
 
 # ---------------------------------------------------------------- 7) 启动器与文档
