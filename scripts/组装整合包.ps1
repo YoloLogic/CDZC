@@ -23,7 +23,7 @@ param([switch]$SkipEditor)
 $ErrorActionPreference = 'Stop'
 $enc = New-Object System.Text.UTF8Encoding($false)
 $gbk = [System.Text.Encoding]::GetEncoding(936)
-$根 = 'E:\ChineseVSCode\整合包\中文大战代码-0.1'
+$根 = 'E:\ChineseVSCode\整合包\中文大战代码-0.2'
 $tc = Join-Path $根 'toolchains'
 
 function 步([string]$s) { Write-Host ('=== ' + $s + ' ===') }
@@ -74,7 +74,7 @@ $tsSrc = 'E:\ChineseTypeScript\dist\ChineseTypeScript-0.2.4-win64'
 if (Test-Path -LiteralPath $tsSrc) {
 	robocopy $tsSrc (Join-Path $tc 'typescript') /MIR /NFL /NDL /NJH /NJS /NP | Out-Null
 	# TS 的中文成员名是按名字全局替换的，写错名字会静默产错结果 —— 随包发一份陷阱表
-	Copy-Item (Join-Path $PSScriptRoot '..\整合包\中文大战代码-0.1\toolchains\typescript\中文成员名-陷阱与正确写法.md') (Join-Path $tc 'typescript\中文成员名-陷阱与正确写法.md') -Force -ErrorAction SilentlyContinue
+	Copy-Item (Join-Path $PSScriptRoot '..\整合包\中文大战代码-0.2\toolchains\typescript\中文成员名-陷阱与正确写法.md') (Join-Path $tc 'typescript\中文成员名-陷阱与正确写法.md') -Force -ErrorAction SilentlyContinue
 	Write-Host ('  ' + (大小 (Join-Path $tc 'typescript')) + ' MB')
 } else { Write-Host '  !! 缺来源：' + $tsSrc; exit 1 }
 
@@ -347,7 +347,7 @@ exit /b 0
 | 项 | 内容 |
 |---|---|
 | 项目 | ChinesePython |
-| 授权内容 | 随「中文大战代码 0.1」整合包一并分发 |
+| 授权内容 | 随「中文大战代码 0.2」整合包一并分发 |
 | 授权依据 | ChinesePython 著作权人于 2026-10-10 在协作对话中明确表示「允许」 |
 | 授权范围 | 本整合包内 `toolchains\python\` 下的运行时（含中文标准库与报错资源），保持原样 |
 | 与 ChinesePython LICENSE 的关系 | 其 `LICENSE-SCOPE.md` 规定原创部分「禁止重新打包再发布」；本授权系著作权人对其自身许可的豁免，仅适用于本整合包 |
@@ -358,7 +358,7 @@ exit /b 0
 '@, $enc)
 
 $说明 = @'
-# 中文大战代码 0.1
+# 中文大战代码 0.2
 
 **不是创新的汉语编程，却是最强的汉语编程。**
 
