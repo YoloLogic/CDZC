@@ -24,10 +24,10 @@ VS Marketplace | https://marketplace.visualstudio.com/items?itemName=YoloLogic.c
 
 ## 下载
 
-到 [Releases](../../releases) 下载 **[`CDZC-0.1-Setup.exe`](../../releases/download/v0.1/CDZC-0.1-Setup.exe)**（373.6 MB）。
+到 [Releases](../../releases) 下载 **[`CDZC-0.2-Setup.exe`](../../releases/download/v0.1/CDZC-0.2-Setup.exe)**（373.6 MB）。
 
-**便携版（免安装，推荐）**：[`CDZC-0.1-win64.zip`](https://github.com/YoloLogic/CDZC/releases/download/v0.1/CDZC-0.1-win64.zip)
-（620.9 MB，SHA256 `138f74c4cf48fdaf81382c2dc0eee3a53568aabe398d80194336a17e88f68bea`）
+**便携版（免安装，推荐）**：[`CDZC-0.2-win64.zip`](https://github.com/YoloLogic/CDZC/releases/download/v0.2/CDZC-0.2-win64.zip)
+（586.5 MB，SHA256 `e5f7d2d44051e3f3d2a54545b5dc02ec89e278098d4e3e51c9123843149cdbb8`）
 解压 → 双击 `中文大战代码-0.1\启动.cmd` 即可，四条工具链会自动注入 PATH。
 包内 Chinese++ 为 **0.4**（LLVM/Clang 24 分支，101 个中文关键字拼写，免装 Visual Studio）。
 
@@ -119,3 +119,14 @@ Eclipse Foundation、Python Software Foundation 均无隶属或背书关系。
 - ChineseJava 见 `toolchains\java\runtime\legal\`；
 - **ChinesePython** 原创部分采用自定义许可（禁止重新打包再发布），本发行包分发已获授权，
   凭据见 [docs/分发授权.md](docs/分发授权.md)。
+## 0.2 的变化（2026-11-13）
+
+- **修好「运行任务」**：0.1 的 `examples\.vscode\tasks.json` 是非法 JSON（命令被重复拼接），
+  VS Code 静默忽略 → 任务列表里没有 C++。0.2 修好并在组装时做 JSON 自检。
+- **用户级任务默认开启**：装完（或首次跑启动器）自动写入
+  `%APPDATA%\中文大战代码\User\tasks.json`，开任意文件夹/单文件按 `Ctrl+Shift+B` 即可编译运行；
+  路径按**运行位置**动态生成（便携版不再报「路径不被识别」）。
+- **Chinese++ 升级到 0.4**：中文头 122 个，新增 `<内存>`（智能指针中文名）、`<类型特征中文>`、`<汉语层>`
+  （可全中文调用：`为整数` / `文本()` / `锁守` / `唯一指针中` / `造唯一` / `可选取值` / `元取` /
+  `是第几种` / `任一取` 等），并修好变体（与 bundled MS STL 内部函数重名的歧义）。
+- 新增 `tests\15-zh-layer` 自检用例（26 项，全过）。
