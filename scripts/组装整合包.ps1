@@ -311,6 +311,13 @@ set "ROOT=%~dp0"
 set "CDZC_ROOT=%ROOT:~0,-1%"
 set "PATH=%ROOT%toolchains\cpp\bin;%ROOT%toolchains\python\PCbuild\amd64;%ROOT%toolchains\java\runtime\bin;%ROOT%toolchains\typescript\bin;%ROOT%toolchains\typescript\node;%PATH%"
 set "PYTHONHOME=%ROOT%toolchains\python"
+rem ---- 用户级任务：默认开启，让「运行任务」在任何文件夹/单文件下都可用 ----
+set "用户任务=%APPDATA%\中文大战代码\User\tasks.json"
+if not exist "%用户任务%" if exist "%ROOT%用户任务\tasks.json" (
+  if not exist "%APPDATA%\中文大战代码\User" mkdir "%APPDATA%\中文大战代码\User"
+  copy /y "%ROOT%用户任务\tasks.json" "%用户任务%" >nul
+)
+
 set "EXE=%ROOT%editor\中文大战代码.exe"
 if not exist "%EXE%" (
   echo 找不到 editor\中文大战代码.exe，包可能不完整。
