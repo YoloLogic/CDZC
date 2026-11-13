@@ -311,9 +311,21 @@ set "ROOT=%~dp0"
 set "CDZC_ROOT=%ROOT:~0,-1%"
 set "PATH=%ROOT%toolchains\cpp\bin;%ROOT%toolchains\python\PCbuild\amd64;%ROOT%toolchains\java\runtime\bin;%ROOT%toolchains\typescript\bin;%ROOT%toolchains\typescript\node;%PATH%"
 set "PYTHONHOME=%ROOT%toolchains\python"
-rem ---- 用户级任务：默认开启，让「运行任务」在任何文件夹/单文件下都可用 ----
-set "用户任务=%APPDATA%\中文大战代码\User\tasks.json"
-if not exist "%用户任务%" if exist "%ROOT%用户任务\tasks.json" (
+rem ---- 用户级任务：按【本包实际位置】生成/更新，开任意文件夹/单文件都能「运行任务」----
+set "TASKS=%APPDATA%\中文大战代码\User\tasks.json"
+if not exist "%APPDATA%\中文大战代码\User" mkdir "%APPDATA%\中文大战代码\User"
+set "ROOTF=%ROOT:\=/%"
+> "%TASKS%" (
+echo {
+echo   "version": "2.0.0",
+echo   "tasks": [
+echo     { "label": "C++：编译并运行当前文件", "type": "shell", "command": "\"%ROOTF%toolchains/cpp/bin/chinese++.exe\" -std=c++2c -D_CRT_SECURE_NO_WARNINGS \"${file}\" -o \"${fileDirname}/${fileBasenameNoExtension}.exe\" ^&^& \"${fileDirname}/${fileBasenameNoExtension}.exe\"", "group": { "kind": "build", "isDefault": true } },
+echo     { "label": "Python：运行当前文件", "type": "shell", "command": "\"%ROOTF%toolchains/python/PCbuild/amd64/python.exe\" \"${file}\"" },
+echo     { "label": "Java：编译并运行当前文件", "type": "shell", "command": "\"%ROOTF%toolchains/java/runtime/bin/javac.exe\" \"${file}\" ^&^& \"%ROOTF%toolchains/java/runtime/bin/java.exe\" -cp \"${fileDirname}\" \"${fileBasenameNoExtension}\"" },
+echo     { "label": "TypeScript：编译并运行当前文件", "type": "shell", "command": "\"%ROOTF%toolchains/typescript/bin/chtsc.exe\" \"${file}\" --target es2020 ^&^& \"%ROOTF%toolchains/typescript/node/node.exe\" \"${fileDirname}/${fileBasenameNoExtension}.js\"" }
+echo   ]
+echo }
+)
   if not exist "%APPDATA%\中文大战代码\User" mkdir "%APPDATA%\中文大战代码\User"
   copy /y "%ROOT%用户任务\tasks.json" "%用户任务%" >nul
 )
