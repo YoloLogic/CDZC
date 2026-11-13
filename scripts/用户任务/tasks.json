@@ -1,0 +1,40 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "C++：编译并运行当前文件",
+      "type": "shell",
+      "command": "\"${env:LOCALAPPDATA}\\中文大战代码\\toolchains\\cpp\\bin\\chinese++.exe\" -std=c++20 -D_CRT_SECURE_NO_WARNINGS \"${file}\" -o \"${fileDirname}/${fileBasenameNoExtension}.exe\" && \"${fileDirname}/${fileBasenameNoExtension}.exe\"",
+      "group": { "kind": "build", "isDefault": true },
+      "problemMatcher": { "pattern": { "regexp": "^(.*?):(\\d+):(\\d+):\\s+(error|warning|note):\\s+(.*)$", "file": 1, "line": 2, "column": 3, "severity": 4, "message": 5 } }
+    },
+    {
+      "label": "C++：只编译不运行",
+      "type": "shell",
+      "command": "\"${env:LOCALAPPDATA}\\中文大战代码\\toolchains\\cpp\\bin\\chinese++.exe\" -std=c++20 -D_CRT_SECURE_NO_WARNINGS \"${file}\" -o \"${fileDirname}/${fileBasenameNoExtension}.exe\"",
+      "group": "build",
+      "problemMatcher": { "pattern": { "regexp": "^(.*?):(\\d+):(\\d+):\\s+(error|warning|note):\\s+(.*)$", "file": 1, "line": 2, "column": 3, "severity": 4, "message": 5 } }
+    },
+    {
+      "label": "Python：运行当前文件",
+      "type": "shell",
+      "command": "\"${env:LOCALAPPDATA}\\中文大战代码\\toolchains\\python\\PCbuild\\amd64\\python.exe\" \"${file}\"",
+      "group": "build",
+      "problemMatcher": []
+    },
+    {
+      "label": "Java：编译并运行当前文件",
+      "type": "shell",
+      "command": "\"${env:LOCALAPPDATA}\\中文大战代码\\toolchains\\java\\runtime\\bin\\javac.exe\" \"${file}\" && \"${env:LOCALAPPDATA}\\中文大战代码\\toolchains\\java\\runtime\\bin\\java.exe\" -cp \"${fileDirname}\" \"${fileBasenameNoExtension}\"",
+      "group": "build",
+      "problemMatcher": { "pattern": { "regexp": "^(.*?):(\\d+):\\s+(error|warning):\\s+(.*)$", "file": 1, "line": 2, "severity": 3, "message": 4 } }
+    },
+    {
+      "label": "TypeScript：编译并运行当前文件",
+      "type": "shell",
+      "command": "\"${env:LOCALAPPDATA}\\中文大战代码\\toolchains\\typescript\\bin\\chtsc.exe\" \"${file}\" --target es2020 && \"${env:LOCALAPPDATA}\\中文大战代码\\toolchains\\typescript\\node\\node.exe\" \"${fileDirname}/${fileBasenameNoExtension}.js\"",
+      "group": "build",
+      "problemMatcher": { "pattern": { "regexp": "^(.*?)\\((\\d+),(\\d+)\\):\\s+(error|warning)\\s+(\\w+):\\s+(.*)$", "file": 1, "line": 2, "column": 3, "severity": 4, "message": 6 } }
+    }
+  ]
+}

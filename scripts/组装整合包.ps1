@@ -284,6 +284,13 @@ $tasks = @'
 }
 '@
 [System.IO.File]::WriteAllText((Join-Path $ex '.vscode\tasks.json'), ($tasks -replace "`r?`n", "`n"), $enc)
+
+# 用户级任务：装到 %APPDATA%\中文大战代码\User\tasks.json 后，开任意文件夹/单文件都能在「运行任务」里看到
+$用户任务源 = Join-Path $PSScriptRoot '用户任务'
+if (Test-Path -LiteralPath $用户任务源) {
+    robocopy $用户任务源 (Join-Path $根 '用户任务') /MIR /NFL /NDL /NJH /NJS /NP | Out-Null
+    Write-Host ('  用户任务模板：' + ((Get-ChildItem (Join-Path $根 '用户任务') -File | ForEach-Object { $_.Name }) -join ' / '))
+}
 # 自检：tasks.json 必须是合法 JSON（非法时 VS Code 的「运行任务」列表会是空的）
 try { $tasks | ConvertFrom-Json | Out-Null } catch { throw ('tasks.json 非法：' + $_) }
 Write-Host ('  ' + (大小 $ex) + ' MB')
